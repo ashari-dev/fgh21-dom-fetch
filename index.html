@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 100px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        width: 300px;
+        align-items: center;
+        background-color: aquamarine;
+        justify-content: center;
+        border-radius: 40px;
+      }
+      h1 {
+        font-family: sans-serif;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+      .container form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: end;
+      }
+      .container form input {
+        height: 25px;
+        border-radius: 10px;
+        padding-left: 10px;
+      }
+      .container form button {
+        height: 25px;
+        width: 70px;
+        border-radius: 8px;
+        background-color: aqua;
+        font-weight: 600;
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>LogIn</h1>
+      <form id="form">
+        <div>
+          <input type="email" name="email" id="email" placeholder="email" />
+        </div>
+        <div>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="password"
+          />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    <script>
+      const form = document.getElementById("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const pass = e.target.password.value;
+        const dataForm = new URLSearchParams();
+        dataForm.append("email", email);
+        dataForm.append("password", pass);
+
+        fetch("https://st2lww-8888.csb.app/auth/login", {
+          method: "POST",
+          body: dataForm,
+        }).then((response) => {
+          response.json().then((data) => {
+            if (data.success) {
+              alert(data.message);
+              window.location.href = "./index2.html";
+            } else {
+              alert(data.message);
+            }
+          });
+        });
+        // .catch(console.log("gagal"));
+      });
+    </script>
+  </body>
+</html>

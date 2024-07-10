@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Form Survey Perokok</div>
+      <div class="form">
+        <form id="form-survey" style="margin-bottom: 20px">
+          <div>
+            <label for="name" class="title">Siapa nama anda?</label>
+            <div>
+              <input type="text" id="name" name="name" />
+            </div>
+          </div>
+          <div>
+            <label for="age" class="title">Berapa umur anda?</label>
+            <div>
+              <input type="number" id="age" name="age" />
+            </div>
+          </div>
+          <div>
+            <div class="title">Apa jenis kelamin anda?</div>
+            <div>
+              <input
+                type="radio"
+                id="gender-l"
+                name="gender"
+                value="Laki-laki"
+              />
+              <label for="gender-l">Laki-laki</label>
+              <input
+                type="radio"
+                id="gender-p"
+                name="gender"
+                value="Perempuan"
+              />
+              <label for="gender-p">Perempuan</label>
+            </div>
+          </div>
+          <div>
+            <div class="title">Apakah anda perokok?</div>
+            <div>
+              <input type="radio" id="smoker-y" name="smoker" value="Ya" />
+              <label for="smoker-y">Ya</label>
+              <input type="radio" id="smoker-n" name="smoker" value="Tidak" />
+              <label for="smoker-n">Tidak</label>
+            </div>
+          </div>
+          <div>
+            <div class="title">
+              Jika anda perokok, rokok apa saja yang anda pernah coba?
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="cigar"
+                id="cigar-1"
+                value="Gudang Garam Filter"
+              />
+              <label for="cigar-1">Gudang Garam Filter</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="cigar"
+                id="cigar-2"
+                value="Lucky Strike"
+              />
+              <label for="cigar-2">Lucky Strike</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="cigar"
+                id="cigar-3"
+                value="Marlboro"
+              />
+              <label for="cigar-3">Marlboro</label>
+            </div>
+            <div>
+              <input type="checkbox" name="cigar" id="cigar-4" value="Esse" />
+              <label for="cigar-4">Esse</label>
+            </div>
+          </div>
+          <div>
+            <button type="submit">Save</button>
+            <button type="reset">reset</button>
+          </div>
+        </form>
+      </div>
+      <div class="table">
+        <table border="1" style="border-collapse: collapse">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Is respondent a smoker?</th>
+              <th>Cigar variant that respondent have tried</th>
+            </tr>
+          </thead>
+          <tbody id="response">
+            <tr>
+              <td>Admin</td>
+              <td>30</td>
+              <td>Laki-laki</td>
+              <td>Ya</td>
+              <td>Esse <br />Marlboro</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
