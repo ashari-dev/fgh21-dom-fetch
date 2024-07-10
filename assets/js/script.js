@@ -49,10 +49,30 @@ form.addEventListener("submit", async (e) => {
   const cigarVariant = cigarVarianArr.join("; ");
 
   const dataForm = new URLSearchParams();
-  dataForm.append("name", name);
-  dataForm.append("age", age);
-  dataForm.append("gender", gender);
-  dataForm.append("isSmoker", isSmoker);
+  if (name !== "") {
+    dataForm.append("name", name);
+  } else {
+    window.alert("Data tidak boleh kosong");
+    return;
+  }
+  if (age !== "" && parseInt(age) > 0) {
+    dataForm.append("age", age);
+  } else {
+    window.alert("Data tidak boleh kosong");
+    return;
+  }
+  if (gender !== "") {
+    dataForm.append("gender", gender);
+  } else {
+    window.alert("Data tidak boleh kosong");
+    return;
+  }
+  if (isSmoker !== "") {
+    dataForm.append("isSmoker", isSmoker);
+  } else {
+    window.alert("Data tidak boleh kosong");
+    return;
+  }
   dataForm.append("cigarVariant", cigarVariant);
 
   const pushData = await fetch(endPoint, {
@@ -63,6 +83,7 @@ form.addEventListener("submit", async (e) => {
   if (data.success) {
     alert("data berhasil disimpan");
   } else alert("data gagal");
+  form.reset();
   restApi();
 });
 
