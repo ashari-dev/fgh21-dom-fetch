@@ -26,37 +26,45 @@
           </div>
           <div>
             <div class="title">Apa jenis kelamin anda?</div>
-            <div>
-              <input
-                type="radio"
-                id="gender-l"
-                name="gender"
-                value="Laki-laki"
-              />
-              <label for="gender-l">Laki-laki</label>
-              <input
-                type="radio"
-                id="gender-p"
-                name="gender"
-                value="Perempuan"
-              />
-              <label for="gender-p">Perempuan</label>
+            <div class="wrapper">
+              <div class="radio">
+                <input
+                  type="radio"
+                  id="gender-l"
+                  name="gender"
+                  value="Laki-laki"
+                />
+                <label for="gender-l">Laki-laki</label>
+              </div>
+              <div class="radio">
+                <input
+                  type="radio"
+                  id="gender-p"
+                  name="gender"
+                  value="Perempuan"
+                />
+                <label for="gender-p">Perempuan</label>
+              </div>
             </div>
           </div>
           <div>
             <div class="title">Apakah anda perokok?</div>
-            <div>
-              <input type="radio" id="smoker-y" name="smoker" value="Ya" />
-              <label for="smoker-y">Ya</label>
-              <input type="radio" id="smoker-n" name="smoker" value="Tidak" />
-              <label for="smoker-n">Tidak</label>
+            <div class="wrapper">
+              <div class="radio">
+                <input type="radio" id="smoker-y" name="smoker" value="Ya" />
+                <label for="smoker-y">Ya</label>
+              </div>
+              <div class="radio">
+                <input type="radio" id="smoker-n" name="smoker" value="Tidak" />
+                <label for="smoker-n">Tidak</label>
+              </div>
             </div>
           </div>
           <div>
             <div class="title">
               Jika anda perokok, rokok apa saja yang anda pernah coba?
             </div>
-            <div>
+            <div class="radio">
               <input
                 type="checkbox"
                 name="cigar"
@@ -65,7 +73,7 @@
               />
               <label for="cigar-1">Gudang Garam Filter</label>
             </div>
-            <div>
+            <div class="radio">
               <input
                 type="checkbox"
                 name="cigar"
@@ -74,7 +82,7 @@
               />
               <label for="cigar-2">Lucky Strike</label>
             </div>
-            <div>
+            <div class="radio">
               <input
                 type="checkbox"
                 name="cigar"
@@ -83,14 +91,13 @@
               />
               <label for="cigar-3">Marlboro</label>
             </div>
-            <div>
+            <div class="radio">
               <input type="checkbox" name="cigar" id="cigar-4" value="Esse" />
               <label for="cigar-4">Esse</label>
             </div>
           </div>
-          <div>
+          <div class="btn">
             <button type="submit">Save</button>
-            <button type="reset">reset</button>
           </div>
         </form>
       </div>
